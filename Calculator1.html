@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calculator {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    h1 {
+      color: #4CAF50;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h1 id="head1">Calculator</h1>
+
+    <label for="number1">Enter number 1:</label>
+    <input id="number1" type="number" placeholder="Enter first number">
+
+    <label for="number2">Enter number 2:</label>
+    <input id="number2" type="number" placeholder="Enter second number">
+
+    <button id="sum">+</button>
+    <button id="minus">-</button>
+    <button id="product">*</button>
+    <button id="division">/</button>
+  </div>
+
+  <script>
+    // Get references to the buttons
+    let value1 = document.getElementById('sum');
+    let value2 = document.getElementById('minus');
+    let value3 = document.getElementById('product');
+    let value4 = document.getElementById('division');
+
+    // Define the onclick function for each operation
+    value1.onclick = function() {
+      let num1 = parseFloat(document.getElementById('number1').value);
+      let num2 = parseFloat(document.getElementById('number2').value);
+      let summation = num1 + num2;
+      window.alert(`Summation: ${summation}`);
+    }
+
+    value2.onclick = function() {
+      let num1 = parseFloat(document.getElementById('number1').value);
+      let num2 = parseFloat(document.getElementById('number2').value);
+      let subtraction = num1 - num2;
+      window.alert(`Subtraction: ${subtraction}`);
+    }
+
+    value3.onclick = function() {
+      let num1 = parseFloat(document.getElementById('number1').value);
+      let num2 = parseFloat(document.getElementById('number2').value);
+      let multiplication = num1 * num2;
+      window.alert(`Multiplication: ${multiplication}`);
+    }
+
+    value4.onclick = function() {
+      let num1 = parseFloat(document.getElementById('number1').value);
+      let num2 = parseFloat(document.getElementById('number2').value);
+      if (num2 === 0) {
+        window.alert('Division by zero is not allowed');
+      } else {
+        let division = num1 / num2;
+        window.alert(`Division: ${division}`);
+      }
+    }
+  </script>
+</body>
+</html>
